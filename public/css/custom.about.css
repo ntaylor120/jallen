@@ -1,0 +1,11 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+	background-image:url(../img/bkg2.jpg);
+	background-repeat: repeat;
+}
+
+.hero-unit{
+    background-color: rgba(0, 0, 0, 0); // use rgba and set Opacity to 0 for transparent.
+ }
