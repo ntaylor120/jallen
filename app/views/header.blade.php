@@ -10,9 +10,9 @@
     
     <div class="nav-collapse">
     <ul class="nav">
-      <li class="active"><a href="index.html">Home</a> </li>
+      <li class="active"><a href="/">Home</a> </li>
       <li><a href="our_line.html">Brand X Products</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="/about">About</a></li>
       <!--dropdown starts here!-->
       <li class="dropdown"><a href="recipes/recipes.html" class="dropdown-toggle" data-toggle="dropdown">Mixology <span class="caret"></span></a>
       	<ul class="dropdown-menu">

@@ -1,5 +1,5 @@
-footer class="span2 offset10">
-    	&copy; 2014 X Imports
+<footer class="span2 offset10">
+    	&copy; 2014 J Allen Imports
     </footer>
 
     <!-- close of container div !-->
