@@ -12,7 +12,7 @@ body {
 
 
 
-.carousel-caption2 {
+.carousel-caption3 {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -22,13 +22,13 @@ body {
   background: rgba(0, 0, 0, 0.75);
 }
 
-.carousel-caption2 h4,
-.carousel-caption2 p {
+.carousel-caption3 h4,
+.carousel-caption p {
   line-height: 20px;
   color: #ffffff;
 }
 
-.carousel-caption2 h4 {
+.carousel-caption3 h4 {
   margin: 0 0 5px;
 }
 
@@ -45,22 +45,22 @@ body {
 
 
 
- .carousel-caption3 {
+ .carousel-caption2 {
   position: absolute;
-  right: 0%;
+  right: 15%;
   bottom: 20px;
   left: 15%;
   z-index: 10;
   padding-top: 20px;
   padding-bottom: 20px;
-  color: #ffffff;
+  color: #000;
   text-align: left;
    background: #333333;
   background: rgba(0, 0, 0, 0.75);
 }
 
-.carousel-caption3 h4,
-.carousel-caption3 p {
+.carousel-caption2 h4,
+.carousel-caption2 p {
   line-height: 20px;
   color: #000;
 }
