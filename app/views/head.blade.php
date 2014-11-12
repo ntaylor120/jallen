@@ -2,9 +2,9 @@
 
    <title>@yield ('title', 'P4 Project for Nancy Taylor')</title>
 
-    <!-- Bootstrap core CSS -->
+    <!--Bootstrap core CSS -->
    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-  <link href="css/bootstrap-responsive.css" rel="stylesheet" type="text/css">
+  <link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css">
   <link href="css/custom.main.css" rel="sp-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="description" content="">

@@ -9,3 +9,58 @@ body {
 .hero-unit{
     background-color: rgba(0, 0, 0, 0); // use rgba and set Opacity to 0 for transparent.
  }
+
+
+
+.carousel-caption2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  background: #333333;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.carousel-caption2 h4,
+.carousel-caption2 p {
+  line-height: 20px;
+  color: #ffffff;
+}
+
+.carousel-caption2 h4 {
+  margin: 0 0 5px;
+}
+
+.carousel-caption3 p {
+  margin-bottom: 0;
+}
+
+
+
+
+
+
+
+
+
+
+ .carousel-caption3 {
+  position: absolute;
+  right: 0%;
+  bottom: 20px;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #ffffff;
+  text-align: left;
+   background: #333333;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.carousel-caption3 h4,
+.carousel-caption3 p {
+  line-height: 20px;
+  color: #000;
+}

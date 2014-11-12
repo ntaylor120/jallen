@@ -1,3 +1,9 @@
+
+<!--  Header2 containers the photo carousel/hero unit for the main page.
+      This appears only on the _main blade template, as that is the
+      template used only for the main page -->
+
+
 <div class="container">
 <div class="row-fluid">
     
@@ -18,25 +24,25 @@
          </ol>
          <div class="carousel-inner">
            <div class="item active"> <img src="img/page1_pic1.jpg" class="img-responsive" alt="">
-             <div class="carousel-caption">
+             <div class="carousel-caption2">
                <h4>Always Fresh</h4>
                <p>Made with the finest ingredients</p>
              </div>
            </div>
            <div class="item"> <img src="img/page1_pic2.jpg" class="img-responsive" alt="">
-             <div class="carousel-caption">
+             <div class="carousel-caption2">
                <h4>Always Smooth</h4>
                <p>For the discrimating connoisseur.</p>
              </div>
            </div>
            <div class="item"> <img src="img/page1_pic3.jpg" class="img-responsive" alt="Xhou Ta.">
-             <div class="carousel-caption">
+             <div class="carousel-caption2">
                <h4>Always Right</h4>
                <p>Perfect alone or as a mixed drink</p>
              </div>
            </div>
            <div class="item"> <img src="img/page1_pic4.jpg" class="img-responsive" alt="">
-             <div class="carousel-caption">
+             <div class="carousel-caption2">
                <h4>J Allen Imports</h4>
                <p>fine spirits made from all natural X</p>
              </div>
