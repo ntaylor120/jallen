@@ -41,7 +41,7 @@
 
    </div>  <!--close main span 12-->
   </div>  <!--close main row-->
-</div>  <!--close main container-->
+
 <p>&nbsp;</p>
 
 @stop

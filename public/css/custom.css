@@ -7,5 +7,5 @@ body{
 }
 
 .hero-unit{
-    background-color: rgba(0, 0, 0, 0); // use rgba and set Opacity to 0 for transparent.
+    background-color: rgba(81, 173, 225, 0); // use rgba and set Opacity to 0 for transparent.
  }

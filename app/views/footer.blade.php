@@ -2,6 +2,7 @@
 
 
 <footer class="span2 offset10">
+	<p>&nbsp;</p>
     	&copy; 2014 J Allen Imports
     </footer>
 
@@ -18,5 +19,6 @@
 		});
 
 </script>
+</div>
 </body>
 </html>
