@@ -26,9 +26,25 @@ underage page.  Need to add code so that once the user is verified, that they ar
 $allowed_age = 21;
 $bdate = strtotime($_REQUEST['whatYear'].'-'.$_REQUEST['whatMonth']."-".$_REQUEST['whatDay']);
 $age = (time()-$bdate)/31536000;
+
+/*set variable for the remember me checkbox */
+$remember = Input::get('remember');
 if($age >= $allowed_age) {
-    return View::make('main');
+
+  
+    /*if the checkbox "remember me" was checked, then set the cookie to never expire */
+    if($remember){
+        $cookie = Cookie::forever('ofAge', 'over 21');
+        return View::make('main')->withCookie($cookie);
+
+    }
+
+    /*otherwise, the checkbox 'remember me' was unchecked, and set the cookie to last only for this session */
+    $cookie = Cookie::make('ofAge', 'over 21', 0);
+    return View::make('main')->withCookie($cookie);
 } 
+
+/*if the user is underage, send them to the underage page */
 else {     
     return View::make('underage');
 }
@@ -37,7 +53,7 @@ else {
 
 
     //if yes is checked, create a cookie
-    $response->withCookie(Cookie::make('name', 'value', $minutes));
+    $response->withCookie(Cookie::make('ofAge', 'value', $minutes));
 
 
 

@@ -371,7 +371,7 @@
 <!-- give user the option to remember them, this will generate a non-expiring cookie-->
 
 {{ Form::label('remember' ,'Remember me?')}}
- {{ Form::checkbox('remember', 1, true)}}
+ {{ Form::checkbox('remember', 1)}}
 
  <p>&nbsp;</p>
 
