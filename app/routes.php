@@ -117,18 +117,58 @@ Route::get('/products_rum', function()
 
 
 
-Route::get('/products', function()
+/*
+|--------------------------------------------------------------------------
+| Menu Section:  Mixology
+|--------------------------------------------------------------------------
+|
+|A list of all routes/sub-menus found in the Mixology section:
+|
+| recipe:  main page used for searching for a mixed drink recipe
+| recipe_view (view a signle recipe)  
+| recipe_add
+| recipe_edit
+| recipe_comment
+|
+*/
+
+Route::get('/recipe', function()
 {
-    return View::make('products');
+    return View::make('recipe');
+
+    /*
+    # The all() method will fetch all the rows from a Model/table
+    $recipes = Recipe::all();
+
+    # Make sure we have results before trying to print them...
+    if($recipes->isEmpty() != TRUE) {
+
+        # Typically we'd pass $recipes to a View, but for quick and dirty demonstration, let's just output here...
+        foreach($recipes as $recipe) {
+            echo $recipe->recipe_name.'<br>';
+        }
+    }
+    else {
+        return 'No recipes found';
+    }
+    */
+
+
 });
 
-Route::get('add_recipe', function()
+Route::get('recipe_view', function()
 {
     
-    return View::make('add_recipe');
+    return View::make('recipe_view');
 });
 
-Route::post('/add_recipe', function() {
+Route::get('recipe_add', function()
+{
+    
+    return View::make('recipe_add');
+});
+
+Route::post('/recipe_add', function() {
     
         
 
@@ -156,6 +196,149 @@ Route::get('/recipeAdded', function()
 {
     return View::make('recipe_added');
 });
+
+
+
+Route::get('recipe_edit', function()
+{
+    
+    return View::make('recipe_edit');
+});
+
+
+Route::get('recipe_comment', function()
+{
+    
+    return View::make('recipe_comment');
+});
+
+/*
+|--------------------------------------------------------------------------
+| Menu Section:  Recipes (food recipes)
+|--------------------------------------------------------------------------
+|
+|A list of all routes/sub-menus found in the Recipes section:
+|
+| food:  main page used for searching for a food recipe
+| food_view - view individual recipe
+| food_addRecipe
+| food_editRecipe
+| food_comment  - comment on a recipe
+|
+*/
+
+Route::get('/food', function()
+{
+    return View::make('food');
+});
+
+Route::get('/food_view', function()
+{
+    return View::make('food_view');
+});
+
+Route::get('/food_addRecipe', function()
+{
+    return View::make('food_addRecipe');
+});
+
+Route::get('/food_editRecipe', function()
+{
+    return View::make('food_editRecipe');
+});
+
+Route::get('/food_comment', function()
+{
+    return View::make('food_comment');
+});
+
+
+//NEED TO ADD VIEW.BLADE.PHP PAGES AND CREATE MENU ITEMS FOR THE FOLLOWING
+
+/*
+|--------------------------------------------------------------------------
+| Menu Section:  Gear
+|--------------------------------------------------------------------------
+|
+|A list of all routes/sub-menus found in the Gear section:
+|
+| gear
+| gear_addItem
+| gear_viewItem
+| gear_editItem
+| 
+*/
+
+Route::get('/gear', function()
+{
+    return View::make('gear');
+});
+
+Route::get('/gear_addItem', function()
+{
+    return View::make('gear_addItem');
+});
+
+Route::get('/gear_viewItem', function()
+{
+    return View::make('gear_viewItem');
+});
+
+Route::get('/gear_editItem', function()
+{
+    return View::make('gear_editItem');
+});
+
+/*
+|--------------------------------------------------------------------------
+| Menu Section:  Events
+|--------------------------------------------------------------------------
+|
+|A list of all routes/sub-menus found in the Events section:
+|
+| events - list of upcoming events
+| event_addEvent
+| event_viewEvent - view a specific event
+| event_editEvent
+| 
+*/
+
+Route::get('/events_addEvent', function()
+{
+    return View::make('events_addEvent');
+});
+
+Route::get('/events_viewEvent', function()
+{
+    return View::make('events_viewEvent');
+});
+
+Route::get('/events_editEvent', function()
+{
+    return View::make('events_editEvent');
+});
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Menu Section:  Account
+|--------------------------------------------------------------------------
+|
+|A list of all routes/sub-menus found in the Account section:
+|
+| login (log into existing account)
+| logout (log out of existing account)
+| signup (create a new account)
+| account_edit
+| account_forgotPassword
+| 
+*/
+
+
+
+
+
 
 
 
@@ -240,10 +423,34 @@ Route::get('/logout', function() {
 
 });
 
+Route::get('/account_edit', function()
+{
+    return View::make('account_edit');
+});
+
+Route::get('/account_forgotPassword', function()
+{
+    return View::make('account_forgotPassword');
+});
 
 
 
-//******************TEST ROUTES*********************************
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Menu Section: TEST ROUTES
+|--------------------------------------------------------------------------
+|
+|REMOVE THESE IN PRODUCTION
+| 
+*/
+
+
+
+
 
 
 Route::get('/practice-creating', function() {

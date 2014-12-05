@@ -44,8 +44,8 @@
 
 
 
-        <li><a href="/mixology">Mixology</a></li>
-        <li><a href="/recipes">Recipes</a></li>
+        <li><a href="/recipe">Mixology</a></li>
+        <li><a href="/food">Food Recipes/Pairings</a></li>
         <li><a href="/products">Gear</a></li>
         <li><a href="/products">Events</a></li>
         <li><a href="/logout">LOGOUT</a></li>
