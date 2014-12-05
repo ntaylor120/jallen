@@ -23,8 +23,8 @@
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]
     <script src="js/ie-emulation-modes-warning.js"></script>-->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script src="js/bootstrap.js"></script>
+  <script src="jq/jquery-2.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
     
     
 

@@ -11,15 +11,39 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">J. Allen Imports</a>
+      <a class="navbar-brand" href="/main">J. Allen Imports</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/main">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/products">Products</a></li>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="about_product">About our Products</a></li>
+            <li><a href="about_us">About Us</a></li>
+          </ul>
+        </li>
+
+
+
+        
+          <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Products <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="products_vodka">Vodka</a></li>
+            <li><a href="products_beer">Beer</a></li>
+            <li><a href="products_rum">Rum</a></li>
+            <li><a href="products_cognac">Cognac</a></li>
+            <li><a href="products_brandy">Brandy</a></li>
+          </ul>
+        </li>
+
+
+
+
         <li><a href="/mixology">Mixology</a></li>
         <li><a href="/recipes">Recipes</a></li>
         <li><a href="/products">Gear</a></li>

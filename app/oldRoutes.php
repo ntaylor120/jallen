@@ -7,25 +7,65 @@
 |
 | Here is where you can register all of the routes for an application.
 | It's a breeze. Simply tell Laravel the URIs it should respond to
+O
 | and give it the Closure to execute when that URI is requested.
-|
-*/
-
-
-/*
-|--------------------------------------------------------------------------
-| Menu Section:  Home
-|--------------------------------------------------------------------------
-|
-| Home
-| '/'
-| 'main'
 |
 */
 
 Route::get('/', function()
 {
-	return View::make('main');
+	return View::make('index');
+});
+
+
+
+Route::post('/', function()
+{
+
+/*This code tests to see if the user is 21 or over, of they are, they are sent to the main page, if not, they are sent to an 
+underage page.  Need to add code so that once the user is verified, that they are allowed access to entire site.  */
+$allowed_age = 21;
+$bdate = strtotime($_REQUEST['whatYear'].'-'.$_REQUEST['whatMonth']."-".$_REQUEST['whatDay']);
+$age = (time()-$bdate)/31536000;
+
+/*set variable for the remember me checkbox */
+$remember = Input::get('remember');
+if($age >= $allowed_age) {
+
+  
+    /*if the checkbox "remember me" was checked, then set the cookie to never expire */
+    if($remember){
+        $cookie = Cookie::forever('ofAge', 'over 21');
+        return View::make('main')->withCookie($cookie);
+
+    }
+
+    /*otherwise, the checkbox 'remember me' was unchecked, and set the cookie to last only for this session */
+    $cookie = Cookie::make('ofAge', 'over 21', 0);
+    return View::make('main')->withCookie($cookie);
+} 
+
+/*if the user is underage, send them to the underage page */
+else {     
+    return View::make('underage');
+}
+
+
+
+
+    //if yes is checked, create a cookie
+    $response->withCookie(Cookie::make('ofAge', 'value', $minutes));
+
+
+
+    //if remember me is checked, create a forever cookie
+    $cookie = Cookie::forever('name', 'value');
+
+});
+
+Route::get('underage', function()
+{
+    return View::make('underage');
 });
 
 
@@ -34,88 +74,16 @@ Route::get('main', function()
     return View::make('main');
 });
 
-
-/*
-|--------------------------------------------------------------------------
-| Menu Section:  About
-|--------------------------------------------------------------------------
-|
-|A list of all routes/sub-menus found in the About section:
-|
-| about
-| about_products
-| about_us
-
-|
-*/
-
 Route::get('/about', function()
 {
 	return View::make('about');
 });
 
-Route::get('/about_product', function()
+
+Route::get('/test', function()
 {
-    return View::make('about_product');
+    return View::make('test');
 });
-
-Route::get('/about_us', function()
-{
-    return View::make('about_us');
-});
-
-
-
-
-
-/*
-|--------------------------------------------------------------------------
-| Menu Section:  Products
-|--------------------------------------------------------------------------
-|
-|A list of all routes/sub-menus found in the Products section:
-|
-| products
-| products_vodka
-| products_cognac
-| products_brandy
-| products_beer
-| products_rum
-|
-*/
-
-Route::get('/products', function()
-{
-    return View::make('products');
-});
-
-
-Route::get('/products_vodka', function()
-{
-    return View::make('products_vodka');
-});
-
-Route::get('/products_cognac', function()
-{
-    return View::make('products_cognac');
-});
-
-Route::get('/products_brandy', function()
-{
-    return View::make('products_brandy');
-});
-
-Route::get('/products_beer', function()
-{
-    return View::make('products_beer');
-});
-
-Route::get('/products_rum', function()
-{
-    return View::make('products_rum');
-});
-
-
 
 Route::get('/products', function()
 {
