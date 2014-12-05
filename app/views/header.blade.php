@@ -46,9 +46,25 @@
 
         <li><a href="/recipe">Mixology</a></li>
         <li><a href="/food">Food Recipes/Pairings</a></li>
-        <li><a href="/products">Gear</a></li>
-        <li><a href="/products">Events</a></li>
-        <li><a href="/logout">LOGOUT</a></li>
+        <li><a href="/gear">Gear</a></li>
+        <li><a href="/events">Events</a></li>
+        
+
+<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MyAccount <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="login">Log In</a></li>
+            <li><a href="signup">Sign Up</a></li>
+            <li><a href="logout">Log Out</a></li>
+            <li><a href="account_edit">Edit My Account</a></li>
+            <li><a href="account_forgotPassword">I forgot my Password!</a></li>
+            
+          </ul>
+        </li>
+
+
+
+
       </ul>
     
     </div><!-- /.navbar-collapse -->

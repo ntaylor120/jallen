@@ -303,6 +303,12 @@ Route::get('/gear_editItem', function()
 | 
 */
 
+
+Route::get('/events', function()
+{
+    return View::make('events');
+});
+
 Route::get('/events_addEvent', function()
 {
     return View::make('events_addEvent');
