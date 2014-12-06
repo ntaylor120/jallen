@@ -15,7 +15,7 @@
       <div class="container-fluid">
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
           <h4>Classic Vodka Mixed Drinks</h4>
-          <h5><a href="recipe_clvodka">Classic Vodka drinks made with X Vodka</a></h5>
+          <h5><a href="recipe_clVodka">Classic Vodka drinks made with X Vodka</a></h5>
           
          </div>
 

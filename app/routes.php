@@ -110,13 +110,13 @@ Route::get('/recipe', function()
     return View::make('recipe');
 });
 
-Route::get('recipe_clvodka', function()
+Route::get('recipe_clVodka', function()
 {
 
     $recipes = DB::table('recipes')->where('type', 'LIKE', '%Classic Vodka%')->get();
 
     
-    return View::make('recipe_clvodka')->with('recipes', $recipes);
+    return View::make('recipe_clVodka')->with('recipes', $recipes);
 });
 
 Route::get('recipe_clBrandy', function()
