@@ -9,7 +9,7 @@
     
     <header class="span12 hero-unit">
      	<h1 class=>J Allen Imports </h1>
-        <p class=>Importers of spirits made with all natural quionoa</p>
+        <p class=>Importers of spirits made with all natural INGREDIENT X</p>
             
      <!--Carousel Starts here!-->
 

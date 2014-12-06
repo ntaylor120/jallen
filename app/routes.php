@@ -134,25 +134,8 @@ Route::get('/products_rum', function()
 
 Route::get('/recipe', function()
 {
+     
     return View::make('recipe');
-
-    /*
-    # The all() method will fetch all the rows from a Model/table
-    $recipes = Recipe::all();
-
-    # Make sure we have results before trying to print them...
-    if($recipes->isEmpty() != TRUE) {
-
-        # Typically we'd pass $recipes to a View, but for quick and dirty demonstration, let's just output here...
-        foreach($recipes as $recipe) {
-            echo $recipe->recipe_name.'<br>';
-        }
-    }
-    else {
-        return 'No recipes found';
-    }
-    */
-
 
 });
 
