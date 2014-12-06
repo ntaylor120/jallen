@@ -6,7 +6,7 @@
 
 @section('content')
  
-<h1>The Drink Mix Recipe has been added!</hr>
+<h1>This will be where you add a new drink recipe</hr>
 
     
            

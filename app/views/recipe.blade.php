@@ -15,7 +15,7 @@
       <div class="container-fluid">
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
           <h4>Classic Vodka Mixed Drinks</h4>
-          <h5><a href="/recipes_clVodka">Classic Vodka drinks made with X Vodka</a></h5>
+          <h5><a href="recipe_clvodka">Classic Vodka drinks made with X Vodka</a></h5>
           
          </div>
 
@@ -23,7 +23,7 @@
       <div class="container-fluid">
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
           <h4>Classic Brandy Mixed Drinks</hh4>
-          <h5><a href="/recipes_clVodka">Classic Brandy drinks made with X Brandy</a></h5>
+          <h5><a href="recipe_clBrandy">Classic Brandy drinks made with X Brandy</a></h5>
          
          </div>
 
@@ -31,7 +31,7 @@
       <div class="container-fluid">
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
           <h4>Signature Vodka Mixed Drinks</hh4>
-          <h5><a href="/recipes_clVodka">Signature Vodka drinks made with X Vodka</a></h5>
+          <h5><a href="recipe_sigVodka">Signature Vodka drinks made with X Vodka</a></h5>
           
          </div>
 
@@ -39,7 +39,7 @@
       <div class="container-fluid">
         <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
           <h4>Signature Brandy Mixed Drinks</hh4>
-          <h5><a href="/recipes_clVodka">Signature Brandy drinks made with X Brandy</a></h5>
+          <h5><a href="recipe_sigBrandy">Signature Brandy drinks made with X Brandy</a></h5>
           
          </div>
 
