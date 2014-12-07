@@ -6,11 +6,38 @@
 
 @section('content')
  
-<h1>This will be where you add a new drink recipe</hr>
+<h1>Add A Drink Mix Recipe</h1>
+<p>&nbsp;</p>
 
-    
-           
-      
+{{ Form::open(array('url' => '/add_recipe')) }}
+
+              Name of Recipe<br>
+              {{ Form::text('recipe_name') }}<br><br>
+
+              What type of recipe is this?<br>
+              {{ Form::select('type', array(
+              	'Classic Vodka'=>'Classic Vodka Recipe',
+              	'Classic Brandy'=>'Classic Brandy Recipe',
+              	'Signature Vodka'=>'Signature Vodka Recipe',
+              	'Signature Brandy'=>'Signature Brandy Recipe',
+              	'Other'=>'Other'
+              	
+
+             ))}}<br><br>
+
+              Please enter a brief description<br>
+              {{ Form::text('description') }}<br><br>
+
+              Please enter the recipe<br>
+              {{ Form::textarea('description') }}<br><br>
+
+              {{ Form::submit('Submit') }}
+
+          {{ Form::close() }}
+
+
+
+
 
 
        

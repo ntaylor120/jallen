@@ -159,17 +159,16 @@ Route::get('recipe_add', function()
 Route::post('/recipe_add', function() {
     
         
-    # Instantiate a new recipe model class
+    #create new drink mix recipe and add to recipes database
     $recipe = new Recipe();
-    # Set 
     $recipe->recipe_name = Input::get('recipe_name');
     $recipe->description = Input::get('description');
     $recipe->type = Input::get('type');
     $recipe->recipe = Input::get('recipe');
-    
-    # This is where the Eloquent ORM magic happens
     $recipe->save();
-    return 'A new recipe has been added! Check your database to see...';
+
+    return View::make('recipe_add')->with('flash_message', 'Your recipe has been added!');;
+   
 });
 
 Route::get('/recipe_added', function()
