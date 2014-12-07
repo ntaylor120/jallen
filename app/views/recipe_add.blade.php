@@ -9,7 +9,7 @@
 <h1>Add A Drink Mix Recipe</h1>
 <p>&nbsp;</p>
 
-{{ Form::open(array('url' => '/add_recipe')) }}
+{{ Form::open(array('url' => '/recipe_add')) }}
 
               Name of Recipe<br>
               {{ Form::text('recipe_name') }}<br><br>

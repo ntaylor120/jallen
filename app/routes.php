@@ -151,20 +151,22 @@ Route::get('recipe_view', function()
     
     return View::make('recipe_view');
 });
+
 Route::get('recipe_add', function()
 {
     
     return View::make('recipe_add');
 });
-Route::post('/recipe_add', function() {
+
+Route::post('recipe_add', function() {
     
         
-    #create new drink mix recipe and add to recipes database
+    #create new drink mix recipe using the Recipe model,  and add to recipes database
     $recipe = new Recipe();
     $recipe->recipe_name = Input::get('recipe_name');
     $recipe->description = Input::get('description');
     $recipe->type = Input::get('type');
-    $recipe->recipe = Input::get('recipe');
+    
     $recipe->save();
 
     return View::make('recipe_add')->with('flash_message', 'Your recipe has been added!');;
