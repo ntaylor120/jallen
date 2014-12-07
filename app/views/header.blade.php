@@ -44,7 +44,17 @@
 
 
 
-        <li><a href="/recipe">Mixology</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Mixology<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="recipe">Recipes</a></li>
+            <li><a href="recipe_add">Add a Drink Recipe</a></li>
+          </ul>
+        </li>
+
+
+
+
         <li><a href="/food">Food Recipes/Pairings</a></li>
         <li><a href="/gear">Gear</a></li>
         <li><a href="/events">Events</a></li>
