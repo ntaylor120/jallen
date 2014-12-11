@@ -3,7 +3,11 @@
 class RecipeController extends BaseController {
 
 
-    /* main recipe view  */
+    /* 
+
+    * main recipe view  
+
+    */
 
 	public function showRecipes()
 	{
@@ -12,8 +16,10 @@ class RecipeController extends BaseController {
 	}
 
 
-    /* These are the sub-views, each view displays only the drink recipes for that type (classic vodka, classic brandy
-        signature vodka, signature brandy, or other)  */
+    /* 
+     * These are the sub-views, each view displays only the drink recipes for that type (classic vodka, classic brandy
+    *  signature vodka, signature brandy, or other) 
+    */
 
 	public function showClVodka()
 
@@ -61,12 +67,11 @@ class RecipeController extends BaseController {
     }
 
 
-/**
-     * Display the individual recipe (find by $id).
-     *
-     * @param  int  $id
-     * @return Response
+    /* 
+     *  display an individual recipe   
      */
+
+
     public function showRecipeView($id) {
         try {
             $recipe = Recipe::findOrFail($id);
@@ -77,12 +82,22 @@ class RecipeController extends BaseController {
         return View::make('recipe_view')->with('recipe', $recipe);
     }
 
+   
+     /* 
+     *  display form to add a recipe 
+     */
+
    public function showRecipeAdd()
     {
 
         
     	return View::make('recipe_add');
     }
+
+
+    /* 
+     *  add recipe to the database   
+     */
  
 
     public function makeRecipe()
@@ -103,6 +118,10 @@ class RecipeController extends BaseController {
 
     }
 
+    /* 
+     *  confirm recipe has been added 
+     */
+
 
     public function showRecipeAdded()
     {
@@ -110,6 +129,55 @@ class RecipeController extends BaseController {
         
         return View::make('recipe_added');
     }
+
+    /* 
+     *  edit recipe 
+     */
+
+    public function showRecipeEdit($id)
+    {
+        try {
+            $recipe = Recipe::findOrFail($id);
+        }
+        catch(Exception $e) {
+            return Redirect::to('/recipe_view')->with('flash_message', 'Recipe not found');
+        }
+
+        return View::make('recipe_edit')->with('recipe', $recipe);
+    }
+
+
+   /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function makeRecipeEdit($id) {
+        try {
+            $recipe = Recipe::findOrFail($id);
+        }
+        catch(Exception $e) {
+            return Redirect::to('/recipe_edit')->with('flash_message', 'Recipe not found');
+        }
+        $recipe->recipe_name = Input::get('recipe_name');
+        $recipe->description = Input::get('description');
+        $recipe->type = Input::get('type');
+        $recipe->recipe = Input::get('recipe');
+        
+        $recipe->update();
+     
+        return Redirect::action('recipe_updated')->with('flash_message','Your recipe has been saved.');
+    }
+
+
+
+    
+
+
+    /* 
+     *  delete recipe   
+     */
 
 
     

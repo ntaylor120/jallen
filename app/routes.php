@@ -101,7 +101,11 @@ Route::get('recipe_other', 'RecipeController@showOther');
 
 Route::get('recipe_view/{id}', 'RecipeController@showRecipeView');
 
-Route::get('recipe_view/{id/edit}', 'RecipeController@showRecipeView');
+Route::get('recipe_view/{id}/edit', 'RecipeController@showRecipeEdit');
+
+Route::post('recipe_view/{id}/edit', 'RecipeController@makeRecipeEdit');
+
+Route::get('/recipe_updated', 'RecipeController@showRecipeEdited');
 
 
 
@@ -113,11 +117,7 @@ Route::post('recipe_add', 'RecipeController@makeRecipe');
 
 Route::get('/recipe_added', 'RecipeController@showRecipeAdded');
 
-Route::get('recipe_edit', function()
-{
-    
-    return View::make('recipe_edit');
-});
+
 Route::get('recipe_comment', function()
 {
     
@@ -207,84 +207,4 @@ Route::get('/account_edit', function()
 Route::get('/account_forgotPassword', function()
 {
     return View::make('account_forgotPassword');
-});
-/*
-|--------------------------------------------------------------------------
-| Menu Section: TEST ROUTES
-|--------------------------------------------------------------------------
-|
-|REMOVE THESE IN PRODUCTION
-| 
-*/
-Route::get('/practice-creating', function() {
-    # Instantiate a new recipe model class
-    $recipe = new Recipe();
-    # Set 
-    $recipe->recipe_name = 'Vodka Collins';
-    $recipe->description = 'A delicious use of Brand X Vodka';
-    $recipe->type = 'Signature Vodka';
-    $recipe->recipe = '2 ounces Brand X Brandy <br /> 1 oz Dark crème de cacao<br /> 1 oz Cream/>garnish with freshly grated nutmeg<br />Mixing Instructions.<br /> Serving Instructions<br /> Garnishing Instructions</p>';
-    
-    # This is where the Eloquent ORM magic happens
-    $recipe->save();
-    return 'A new recipe has been added! Check your database to see...';
-});
-Route::get('/practice-reading', function() {
-    # The all() method will fetch all the rows from a Model/table
-    $recipes = Recipe::all();
-    # Make sure we have results before trying to print them...
-    if($recipes->isEmpty() != TRUE) {
-        # Typically we'd pass $recipes to a View, but for quick and dirty demonstration, let's just output here...
-        foreach($recipes as $recipe) {
-            echo $recipe->recipe_name.'<br>';
-        }
-    }
-    else {
-        return 'No recipes found';
-    }
-});
-Route::get('/practice-reading-one-recipe', function() {
-    $recipe = Recipe::where('recipe_name', 'LIKE', '%Martini%')->first();
-    if($recipe) {
-        return $recipe->recipe_name;
-    }
-    else {
-        return 'Recipe not found.';
-    }
-});
-Route::get('/practice-updating', function() {
-    # First get a recipe to update
-    $recipe = Recipe::where('recipe_name', 'LIKE', '%Jellos%')->first();
-    # If we found the recipe, update it
-    if($recipe) {
-        # Give it a different title
-        $recipe->recipe_name = 'Jello Shots';
-        # Save the changes
-        $recipe->save();
-        return "Update complete; check the database to see if your update worked...";
-    }
-    else {
-        return "Recipe not found, can't update.";
-    }
-});
-Route::get('/practice-deleting', function() {
-    # First get a recipe to delete
-    $recipe = Recipe::where('recipe_name', 'LIKE', '%2%')->first();
-    # If we found the recipe, delete it
-    if($recipe) {
-        # Goodbye!
-        $recipe->delete();
-        return "Deletion complete; check the database to see if it worked...";
-    }
-    else {
-        return "Can't delete - Recipe not found.";
-    }
-});
-Route::get('mysql-test', function() {
-    # Print environment
-    echo 'Environment: '.App::environment().'<br>';
-    # Use the DB component to select all the databases
-    $results = DB::select('SHOW DATABASES;');
-    # If the "Pre" package is not installed, you should output using print_r instead
-    echo Pre::render($results);
 });

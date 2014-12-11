@@ -6,14 +6,47 @@
 
 @section('content')
  
-<h1>The Drink Mix Recipe has been added!</hr>
+<h1>Edit {{$recipe->recipe_name}}</h1>
 
-    
-           
-      
+{{ Form::open(array('url' => '/recipe_add')) }}
+
+ Name of Recipe<br>
+              
+ 			{{ Form::label('recipe_name' ,'Name of Recipe:')}}	
+              {{ Form::text('recipe_name', $recipe->recipe_name) }}<br><br>
+
+              {{ Form::label('type' ,'Type of Recipe:')}}<br>
+              {{ Form::select('type', array(
+              	'Classic Vodka'=>'Classic Vodka Recipe',
+              	'Classic Brandy'=>'Classic Brandy Recipe',
+              	'Signature Vodka'=>'Signature Vodka Recipe',
+              	'Signature Brandy'=>'Signature Brandy Recipe',
+              	'Other'=>'Other'
+              	
+
+             ))}}<br><br>
+
+              {{ Form::label('description' ,'Description of Recipe:')}}<br>
+              {{ Form::text('description', $recipe->description) }}<br><br>
+
+              {{ Form::label('recipe' ,'Recipe:')}}<br>
+              {{ Form::textarea('recipe', $recipe->recipe) }}<br><br>
+
+              {{Form::hidden('id', $recipe->id)}}
+
+              {{ Form::submit('Update Recipe')}}<br>
 
 
-       
+{{Form::close()}}
+
+
+
+
+
+  
+
+	  
+     
         
         
 @stop
