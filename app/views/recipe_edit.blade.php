@@ -8,7 +8,7 @@
  
 <h1>Edit {{$recipe->recipe_name}}</h1>
 
-{{ Form::open(array('url' => '/recipe_add')) }}
+{{ Form::open(array('url' => '/recipe_edit')) }}
 
  Name of Recipe<br>
               

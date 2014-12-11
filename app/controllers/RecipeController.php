@@ -148,7 +148,7 @@ class RecipeController extends BaseController {
 
 
    /**
-     * Update the specified resource in storage.
+     * Edit/Update a recipe in the recipes database
      *
      * @param  int  $id
      * @return Response
@@ -165,9 +165,9 @@ class RecipeController extends BaseController {
         $recipe->type = Input::get('type');
         $recipe->recipe = Input::get('recipe');
         
-        $recipe->update();
+        $recipe->save();
      
-        return Redirect::action('recipe_updated')->with('flash_message','Your recipe has been saved.');
+        return View::make('recipe')->with('flash_message','Your recipe has been saved.');
     }
 
 
