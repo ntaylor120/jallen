@@ -13,9 +13,13 @@
 <p>&nbsp;</p>
 
 <!--search is performed in route to create an object of recipes where the type is Classic Brandy, sends into to view as $recipes -->
+<ul>
 @foreach($recipes as $recipe)
-    {{$recipe->recipe_name.'<br>'}}
+ 
+  <li> <a href='/recipe_view/{{ $recipe->id }}'>{{ $recipe->recipe_name }}</a><br></li>
+ 
 @endforeach 
+</ul>
 
       </div>
       </div>

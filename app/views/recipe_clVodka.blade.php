@@ -15,9 +15,13 @@
 <p>
 
 <!--search is performed in route to create an object of recipes where the type is Classic Vodka, sends to view as $recipes -->
+
+<ul>
 @foreach($recipes as $recipe)
-    {{$recipe->recipe_name.'<br>'}}
+  <li> <a href='/recipe_view/{{ $recipe->id }}'>{{ $recipe->recipe_name }}</a><br></li>
+  <!--<li><a href="{{ URL::action('RecipeController@showRecipeView', $recipe->id) }}">{{{ $recipe->recipe_name }}}</a></li>-->
 @endforeach 
+</ul>
     
 </p>
 
@@ -31,3 +35,4 @@
         
         
 @stop
+

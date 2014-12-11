@@ -53,13 +53,13 @@
         </li>
 
 
-
+<!-- these will be added at a future date.
 
         <li><a href="/food">Food Recipes/Pairings</a></li>
         <li><a href="/gear">Gear</a></li>
         <li><a href="/events">Events</a></li>
         
-
+-->
 <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MyAccount <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">

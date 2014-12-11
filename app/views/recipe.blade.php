@@ -13,37 +13,50 @@
 
 	 <div class="row">
       <div class="container-fluid">
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
           <h4>Classic Vodka Mixed Drinks</h4>
           <h5><a href="recipe_clVodka">Classic Vodka drinks made with X Vodka</a></h5>
           
          </div>
 
-       <div class="row">
-      <div class="container-fluid">
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+       
+      
+        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
           <h4>Classic Brandy Mixed Drinks</hh4>
           <h5><a href="recipe_clBrandy">Classic Brandy drinks made with X Brandy</a></h5>
          
          </div>
 
-         <div class="row">
-      <div class="container-fluid">
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+         
+     
+        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
           <h4>Signature Vodka Mixed Drinks</hh4>
           <h5><a href="recipe_sigVodka">Signature Vodka drinks made with X Vodka</a></h5>
           
          </div>
 
-         <div class="row">
-      <div class="container-fluid">
-        <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+         
+      
+        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
           <h4>Signature Brandy Mixed Drinks</hh4>
           <h5><a href="recipe_sigBrandy">Signature Brandy drinks made with X Brandy</a></h5>
           
          </div>
 
-        
+         
+      
+        <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2">
+          <h4>Other Mixed Drinks</hh4>
+          <h5><a href="recipe_other">Other Drinks made with Brand X Spirits</a></h5>
+          
+         </div>
+
+         <p>&nbsp;</p>
+
+         
+
+
+       
       </div>
       </div>
 

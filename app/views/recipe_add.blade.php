@@ -29,7 +29,7 @@
               {{ Form::text('description') }}<br><br>
 
               Please enter the recipe<br>
-              {{ Form::textarea('description') }}<br><br>
+              {{ Form::textarea('recipe') }}<br><br>
 
               {{ Form::submit('Submit') }}
 

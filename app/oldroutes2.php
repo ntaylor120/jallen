@@ -9,8 +9,6 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
-
 /*
 |--------------------------------------------------------------------------
 | Menu Section:  Home
@@ -21,10 +19,14 @@
 | 'main'
 |
 */
-Route::get('/', 'JallenController@showMain');
-Route::get('main', 'JallenController@showMain');
-
-
+Route::get('/', function()
+{
+    return View::make('main');
+});
+Route::get('main', function()
+{
+    return View::make('main');
+});
 /*
 |--------------------------------------------------------------------------
 | Menu Section:  About
@@ -37,10 +39,18 @@ Route::get('main', 'JallenController@showMain');
 | about_us
 |
 */
-
-Route::get('about_us', 'JallenController@showAboutUs');
-Route::get('about_product', 'JallenController@showAboutProduct');
-
+Route::get('/about', function()
+{
+    return View::make('about');
+});
+Route::get('/about_product', function()
+{
+    return View::make('about_product');
+});
+Route::get('/about_us', function()
+{
+    return View::make('about_us');
+});
 /*
 |--------------------------------------------------------------------------
 | Menu Section:  Products
@@ -56,13 +66,30 @@ Route::get('about_product', 'JallenController@showAboutProduct');
 | products_rum
 |
 */
-
-Route::get('products_beer', 'JallenController@showProductsBeer');
-Route::get('products_brandy', 'JallenController@showProductsBrandy');
-Route::get('products_cognac', 'JallenController@showProductsCognac');
-Route::get('products_rum', 'JallenController@showProductsRum');
-Route::get('products_vodka', 'JallenController@showProductsVodka');
-
+Route::get('/products', function()
+{
+    return View::make('products');
+});
+Route::get('/products_vodka', function()
+{
+    return View::make('products_vodka');
+});
+Route::get('/products_cognac', function()
+{
+    return View::make('products_cognac');
+});
+Route::get('/products_brandy', function()
+{
+    return View::make('products_brandy');
+});
+Route::get('/products_beer', function()
+{
+    return View::make('products_beer');
+});
+Route::get('/products_rum', function()
+{
+    return View::make('products_rum');
+});
 /*
 |--------------------------------------------------------------------------
 | Menu Section:  Mixology
@@ -79,39 +106,87 @@ Route::get('products_vodka', 'JallenController@showProductsVodka');
 */
 
 
+/*switching some of these to the controller, but leaving old routes in place TEMPORARILY  */
+/*Route::get('recipe', function()
+{
+     
+    return View::make('recipe');
+});
+*/
 
 Route::get('recipe', 'RecipeController@showRecipes');
 
 
-/*Routes use controllers to search through database and display only recipes of type shown in route (clVodka, clBrandy, etc)*/
+Route::post('/recipe', function()
+{   
+    $query = Input::get('query');
+     
+    return View::make('recipe_search')->with ('query', '$query');
+});
+
+
 
 Route::get('recipe_clVodka', 'RecipeController@showClVodka');
 
-Route::get('recipe_clBrandy', 'RecipeController@showClBrandy');
 
-Route::get('recipe_sigVodka', 'RecipeController@showSigVodka');
+Route::get('recipe_clBrandy', function()
+{
 
-Route::get('recipe_sigBrandy', 'RecipeController@showSigBrandy');
-
-Route::get('recipe_other', 'RecipeController@showOther');
+    $recipes = DB::table('recipes')->where('type', 'LIKE', '%Classic Brandy%')->get();
 
 
+    
+    return View::make('recipe_clBrandy')->with('recipes', $recipes);;
+});
+
+Route::get('recipe_sigVodka', function()
+{
+     $recipes = DB::table('recipes')->where('type', 'LIKE', '%Signature Vodka%')->get();
+    
+    return View::make('recipe_sigVodka')->with('recipes', $recipes);;
+});
+
+Route::get('recipe_sigBrandy', function()
+{
+
+         $recipes = DB::table('recipes')->where('type', 'LIKE', '%Signature Brandy%')->get();
+    
+    return View::make('recipe_sigBrandy')->with('recipes', $recipes);;
+});
 
 
 
-Route::get('recipe_view/{id}', 'RecipeController@showRecipeView');
+Route::get('recipe_view', function()
+{
+    
+    return View::make('recipe_view');
+});
 
-Route::get('recipe_view/{id/edit}', 'RecipeController@showRecipeView');
+Route::get('recipe_add', function()
+{
+    
+    return View::make('recipe_add');
+});
 
+Route::post('recipe_add', function() {
+    
+        
+    #create new drink mix recipe using the Recipe model,  and add to recipes database
+    $recipe = new Recipe();
+    $recipe->recipe_name = Input::get('recipe_name');
+    $recipe->description = Input::get('description');
+    $recipe->type = Input::get('type');
+    
+    $recipe->save();
 
+    return View::make('main')->with('flash_message', 'Your recipe has been added!');;
+   
+});
 
-
-
-Route::get('recipe_add', 'RecipeController@showRecipeAdd');
-
-Route::post('recipe_add', 'RecipeController@makeRecipe');
-
-Route::get('/recipe_added', 'RecipeController@showRecipeAdded');
+Route::get('/recipe_added', function()
+{
+    return View::make('recipe_added');
+});
 
 Route::get('recipe_edit', function()
 {
@@ -123,9 +198,99 @@ Route::get('recipe_comment', function()
     
     return View::make('recipe_comment');
 });
-
-
-
+/*
+|--------------------------------------------------------------------------
+| Menu Section:  Recipes (food recipes)
+|--------------------------------------------------------------------------
+|
+|A list of all routes/sub-menus found in the Recipes section:
+|
+| food:  main page used for searching for a food recipe
+| food_view - view individual recipe
+| food_addRecipe
+| food_editRecipe
+| food_comment  - comment on a recipe
+|
+*/
+Route::get('/food', function()
+{
+    return View::make('food');
+});
+Route::get('/food_view', function()
+{
+    return View::make('food_view');
+});
+Route::get('/food_addRecipe', function()
+{
+    return View::make('food_addRecipe');
+});
+Route::get('/food_editRecipe', function()
+{
+    return View::make('food_editRecipe');
+});
+Route::get('/food_comment', function()
+{
+    return View::make('food_comment');
+});
+//NEED TO ADD VIEW.BLADE.PHP PAGES AND CREATE MENU ITEMS FOR THE FOLLOWING
+/*
+|--------------------------------------------------------------------------
+| Menu Section:  Gear
+|--------------------------------------------------------------------------
+|
+|A list of all routes/sub-menus found in the Gear section:
+|
+| gear
+| gear_addItem
+| gear_viewItem
+| gear_editItem
+| 
+*/
+Route::get('/gear', function()
+{
+    return View::make('gear');
+});
+Route::get('/gear_addItem', function()
+{
+    return View::make('gear_addItem');
+});
+Route::get('/gear_viewItem', function()
+{
+    return View::make('gear_viewItem');
+});
+Route::get('/gear_editItem', function()
+{
+    return View::make('gear_editItem');
+});
+/*
+|--------------------------------------------------------------------------
+| Menu Section:  Events
+|--------------------------------------------------------------------------
+|
+|A list of all routes/sub-menus found in the Events section:
+|
+| events - list of upcoming events
+| event_addEvent
+| event_viewEvent - view a specific event
+| event_editEvent
+| 
+*/
+Route::get('/events', function()
+{
+    return View::make('events');
+});
+Route::get('/events_addEvent', function()
+{
+    return View::make('events_addEvent');
+});
+Route::get('/events_viewEvent', function()
+{
+    return View::make('events_viewEvent');
+});
+Route::get('/events_editEvent', function()
+{
+    return View::make('events_editEvent');
+});
 /*
 |--------------------------------------------------------------------------
 | Menu Section:  Account

@@ -6,13 +6,13 @@
 
 @section('content')
  
-<h1>Signature Brandy Recipes</h1>
+<h1>Other Drink Recipes</h1>
 
-<p>Signature and new drinks made with Brand X Brandy
+<p>Other drinks made with Brand X Spirits</p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
 
-<!--search is performed in route to create an object of recipes where the type is Signature Brandy, sends  to view as $recipes -->
+<!--search is performed in route to create an object of recipes where the type is Classic Brandy, sends into to view as $recipes -->
 <ul>
 @foreach($recipes as $recipe)
  
@@ -20,7 +20,6 @@
  
 @endforeach 
 </ul>
-        
       </div>
       </div>
 
