@@ -11,9 +11,10 @@
   
 
 <body>
+	@include('header')
 <div class="container-fluid">
 
- @include('header')
+ 
 
 <!--Check for any flash messages, and show them if they exist -->
 

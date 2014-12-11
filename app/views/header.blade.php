@@ -1,7 +1,7 @@
 <!--The header contains the navbar used on all pages, this appears on _main and _page blade templates!-->
 
 
-<nav class="navbar navbar-inverse" role="navigation">
+<nav class="navbar navbar-custom" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -60,6 +60,8 @@
         <li><a href="/events">Events</a></li>
         
 -->
+
+
 <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MyAccount <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
