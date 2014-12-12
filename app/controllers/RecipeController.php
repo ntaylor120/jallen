@@ -79,6 +79,8 @@ class RecipeController extends BaseController {
         catch(Exception $e) {
             return Redirect::to('/recipe_view')->with('flash_message', 'Recipe not found');
         }
+
+        
         return View::make('recipe_view')->with('recipe', $recipe);
     }
 
@@ -147,13 +149,17 @@ class RecipeController extends BaseController {
     }
 
 
-   /**
+    /*
      * Edit/Update a recipe in the recipes database
      *
      * @param  int  $id
      * @return Response
-     */
+      */
+    
     public function makeRecipeEdit($id) {
+        
+        
+
         try {
             $recipe = Recipe::findOrFail($id);
         }
@@ -167,9 +173,35 @@ class RecipeController extends BaseController {
         
         $recipe->save();
      
-        return View::make('recipe')->with('flash_message','Your recipe has been saved.');
+        return View::make('recipe_updated')->with('flash_message','Your recipe has been saved.');
     }
 
+
+    public function showRecipeUpdated()
+    {
+        return View::make('recipe_updated');
+    }
+
+
+
+/*
+    * Process the "Edit a recipe form"
+    * 
+    
+    public function makeRecipeEdit() {
+        try {
+            $recipe = Recipe::findOrFail(Input::get('id'));
+        }
+        catch(exception $e) {
+            return Redirect::to('/recipe')->with('flash_message', 'Recipe not found');
+        }
+        # http://laravel.com/docs/4.2/eloquent#mass-assignment
+        $recipe->fill(Input::all());
+        $recipe->save();
+        return Redirect::action('RecipeController@showRecipeUpdated')->with('flash_message','Your changes have been saved.');
+    }
+
+ */
 
 
     
@@ -177,10 +209,35 @@ class RecipeController extends BaseController {
 
     /* 
      *  delete recipe   
-     */
-
-
     
+
+
+    * Process book deletion
+    *
+    * @return Redirect
+
+     */
+    
+    public function makeRecipeDelete() {
+
+
+
+        try {
+            $recipe = Recipe::findOrFail(Input::get('id'));
+        }
+        catch(exception $e) {
+            return Redirect::to('/recipe')->with('flash_message', 'Could not delete recipe - not found.');
+        }
+
+        
+
+        $recipe->delete();
+
+
+        /*Recipe::destroy(Input::get('id'));*/
+        return Redirect::to('/recipe')->with('flash_message', 'Recipe deleted.');
+    }
+   
 
 
 }

@@ -6,7 +6,7 @@ class Recipe extends Eloquent
 		#Recipe has many Reviews
 		#Define a one-to-many relationship.
 
-		return $this->hasMany('Reviews');
+		return $this->hasMany('Reviews', 'recipe_id');
 
 
 	}

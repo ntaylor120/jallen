@@ -105,7 +105,7 @@ Route::get('recipe_view/{id}/edit', 'RecipeController@showRecipeEdit');
 
 Route::post('recipe_view/{id}/edit', 'RecipeController@makeRecipeEdit');
 
-Route::get('recipe_updated', 'RecipeController@showRecipeEdited');
+Route::get('recipe_updated', 'RecipeController@showRecipeUpdated');
 
 
 
@@ -118,11 +118,22 @@ Route::post('recipe_add', 'RecipeController@makeRecipe');
 Route::get('recipe_added', 'RecipeController@showRecipeAdded');
 
 
+
+/*Route::post('recipe_view/{id}/edit', 'RecipeController@deleteRecipe');*/
+
+Route::post('/recipe/delete', 'RecipeController@makeRecipeDelete');
+
+
 Route::get('recipe_comment', function()
 {
     
     return View::make('recipe_comment');
 });
+
+
+
+
+
 
 
 

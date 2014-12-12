@@ -6,11 +6,9 @@
 
 @section('content')
  
-<h1>Edit {{$recipe->recipe_name}}</h1>
+<h1>Delete {{$recipe->recipe_name}}</h1>
 
-
-
-{{Form::open(array('action' => array('RecipeController@makeRecipeEdit', $recipe->id)))}}
+{{ Form::open(array('action' => 'RecipeController@makeRecipeEdit', $recipe->id)) }}
 
  Name of Recipe<br>
               

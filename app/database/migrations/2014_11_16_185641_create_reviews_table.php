@@ -24,7 +24,7 @@ class CreateReviewsTable extends Migration {
 
         # The rest of the fields...comments and whether or not the recipe was liked
         $table->string('comments');
-        $table->boolean('like');
+        $table->boolean('liked');
         $table->integer('recipe_id')->unsigned();  #add fk for the reviews table
 
 			#define fk for the reviews table
