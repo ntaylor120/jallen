@@ -1,4 +1,4 @@
-<!--This page is for adding recipes to the recipe database.  Eventually, only an admin will have access to this page-->
+<!--This page is for viewing the list of available recipes-->
 
 
 @extends('_page')

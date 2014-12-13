@@ -9,8 +9,6 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
-
 /*
 |--------------------------------------------------------------------------
 | Menu Section:  Home
@@ -23,8 +21,6 @@
 */
 Route::get('/', 'JallenController@showMain');
 Route::get('main', 'JallenController@showMain');
-
-
 /*
 |--------------------------------------------------------------------------
 | Menu Section:  About
@@ -37,10 +33,8 @@ Route::get('main', 'JallenController@showMain');
 | about_us
 |
 */
-
 Route::get('about_us', 'JallenController@showAboutUs');
 Route::get('about_product', 'JallenController@showAboutProduct');
-
 /*
 |--------------------------------------------------------------------------
 | Menu Section:  Products
@@ -56,13 +50,11 @@ Route::get('about_product', 'JallenController@showAboutProduct');
 | products_rum
 |
 */
-
 Route::get('products_beer', 'JallenController@showProductsBeer');
 Route::get('products_brandy', 'JallenController@showProductsBrandy');
 Route::get('products_cognac', 'JallenController@showProductsCognac');
 Route::get('products_rum', 'JallenController@showProductsRum');
 Route::get('products_vodka', 'JallenController@showProductsVodka');
-
 /*
 |--------------------------------------------------------------------------
 | Menu Section:  Mixology
@@ -77,51 +69,21 @@ Route::get('products_vodka', 'JallenController@showProductsVodka');
 | recipe_comment
 |
 */
-
-
-
 Route::get('recipe', 'RecipeController@showRecipes');
-
-
 /*Routes use controllers to search through database and display only recipes of type shown in route (clVodka, clBrandy, etc)*/
-
 Route::get('recipe_clVodka', 'RecipeController@showClVodka');
-
 Route::get('recipe_clBrandy', 'RecipeController@showClBrandy');
-
 Route::get('recipe_sigVodka', 'RecipeController@showSigVodka');
-
 Route::get('recipe_sigBrandy', 'RecipeController@showSigBrandy');
-
 Route::get('recipe_other', 'RecipeController@showOther');
-
-
-
-
-
 Route::get('recipe_view/{id}', 'RecipeController@showRecipeView');
-
 Route::get('recipe_view/{id}/edit', 'RecipeController@showRecipeEdit');
-
 Route::post('recipe_view/{id}/edit', 'RecipeController@makeRecipeEdit');
-
-Route::get('recipe_updated', 'RecipeController@showRecipeUpdated');
-
-
-
-
-
+Route::get('recipe_updated', 'RecipeController@showRecipeEdited');
 Route::get('recipe_add', 'RecipeController@showRecipeAdd');
-
 Route::post('recipe_add', 'RecipeController@makeRecipe');
-
 Route::get('recipe_added', 'RecipeController@showRecipeAdded');
-
-
-
-/*Route::post('recipe_view/{id}/edit', 'RecipeController@deleteRecipe');*/
-
-Route::post('/recipe/delete', 'RecipeController@makeRecipeDelete');
+Route::post('recipe_delete', 'RecipeController@makeRecipeDelete');
 
 
 Route::get('recipe_comment', function()
@@ -129,14 +91,6 @@ Route::get('recipe_comment', function()
     
     return View::make('recipe_comment');
 });
-
-
-
-
-
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Menu Section:  Account

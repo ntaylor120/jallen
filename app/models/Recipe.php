@@ -2,11 +2,11 @@
 
 class Recipe extends Eloquent
 {
-	public function review(){
+	public function reviews(){
 		#Recipe has many Reviews
 		#Define a one-to-many relationship.
 
-		return $this->hasMany('Reviews', 'recipe_id');
+		return $this->hasMany('Review', 'recipe_id', 'id');
 
 
 	}
