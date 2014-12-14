@@ -2,17 +2,8 @@
 
 
 <footer class="12">
-	<p>&nbsp;</p>
-	<div class col-lg-3 pull-left>
-    	&copy; 2014 J Allen Imports
-    </div>
-    <div class col-lg-3 pull-right>
 
-        
-
-
-    </div>
-    </footer>
+</footer>
 
     <!-- close of container div !-->
 </div>

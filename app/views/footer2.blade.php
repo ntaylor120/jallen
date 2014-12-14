@@ -28,6 +28,7 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
+
        
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -39,6 +40,7 @@
             <li><a href="#">Separated link</a></li>
           </ul>
         </li>
+        <li><a href="#">&copy; 2014 J Allen Imports</a></li>
       </ul>
       
     </div><!-- /.navbar-collapse -->
