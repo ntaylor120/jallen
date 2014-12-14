@@ -9,6 +9,8 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+
+
 /*
 |--------------------------------------------------------------------------
 | Menu Section:  Home
@@ -21,6 +23,8 @@
 */
 Route::get('/', 'JallenController@showMain');
 Route::get('main', 'JallenController@showMain');
+
+
 /*
 |--------------------------------------------------------------------------
 | Menu Section:  About
@@ -33,8 +37,13 @@ Route::get('main', 'JallenController@showMain');
 | about_us
 |
 */
+
+
 Route::get('about_us', 'JallenController@showAboutUs');
 Route::get('about_product', 'JallenController@showAboutProduct');
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Menu Section:  Products
@@ -55,6 +64,9 @@ Route::get('products_brandy', 'JallenController@showProductsBrandy');
 Route::get('products_cognac', 'JallenController@showProductsCognac');
 Route::get('products_rum', 'JallenController@showProductsRum');
 Route::get('products_vodka', 'JallenController@showProductsVodka');
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Menu Section:  Mixology
@@ -83,6 +95,9 @@ Route::get('recipe_updated', 'RecipeController@showRecipeEdited');
 Route::get('recipe_added', 'RecipeController@showRecipeAdded');
 Route::post('recipe_delete', 'RecipeController@makeRecipeDelete');
 
+Route::get ('recipe_comment/{id}', 'RecipeController@showRecipeComment');
+Route::post('recipe_comment/{id}', 'RecipeController@makeRecipeComment');
+
 
 Route::get('recipe_add', array(
     'before'=>'auth',
@@ -100,11 +115,7 @@ Route::post('recipe_add', 'RecipeController@makeRecipe');
 
 
 
-Route::get('recipe_comment', function()
-{
-    
-    return View::make('recipe_comment');
-});
+
 /*
 |--------------------------------------------------------------------------
 | Menu Section:  Account

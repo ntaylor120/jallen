@@ -158,5 +158,42 @@ class RecipeController extends BaseController {
         /*Recipe::destroy(Input::get('id'));*/
         return Redirect::to('/recipe')->with('flash_message', 'Recipe deleted.');
     }
+
+
+     /* 
+     *  display form to add a comment 
+     */
+   public function showRecipeComment($id) {
+        try {
+            $recipe = Recipe::findOrFail($id);
+        }
+        catch(Exception $e) {
+            return Redirect::to('/recipe_view')->with('flash_message', 'Recipe not found');
+        }
+
+         /*only logged in users go to this page/create recipes */
+        $this->beforeFilter('auth');
+
+        return View::make('recipe_comment')->with('recipe', $recipe);
+   
+   
+    }
+
+
+    public function makeRecipeComment($id){
+
+        
+
+        
+   
+        #create new drink mix recipe using the Recipe model,  and add to recipes database
+        $review = new Review();
+        $review ->review = Input::get('review');
+        $review ->recipe_id = $id;
+        
+        
+        $review ->save();
+        return View::make('recipe')->with('flash_message','Your comment has been saved.');
+    }
     
 }

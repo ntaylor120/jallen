@@ -1,0 +1,5 @@
+$comment = new Comment(array('message' => 'A new comment.'));
+
+$post = Post::find(1);
+
+$comment = $post->comments()->save($comment);
