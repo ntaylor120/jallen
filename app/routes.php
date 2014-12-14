@@ -95,15 +95,17 @@ Route::get('recipe_updated', 'RecipeController@showRecipeEdited');
 Route::get('recipe_added', 'RecipeController@showRecipeAdded');
 Route::post('recipe_delete', 'RecipeController@makeRecipeDelete');
 
-Route::get ('recipe_comment/{id}', 'RecipeController@showRecipeComment');
+Route::get('recipe_comment/{id}', 'RecipeController@showRecipeComment');
 Route::post('recipe_comment/{id}', 'RecipeController@makeRecipeComment');
 
 
 Route::get('recipe_add', array(
-    'before'=>'auth',
+    'before' => 'auth',
     function()
-    {return View::make('recipe_add');
-}));
+    {
+        return View::make('recipe_add');
+    }
+));
 
 
 
@@ -130,45 +132,44 @@ Route::post('recipe_add', 'RecipeController@makeRecipe');
 | account_forgotPassword
 | 
 */
+
 // app/routes.php`:
-Route::get('/signup',
-    array(
-        'before' => 'guest',
-        function() {
-            return View::make('signup');
-        }
-    )
-);
+
+Route::get('/signup', array(
+    'before' => 'guest',
+    function()
+    {
+        return View::make('signup');
+    }
+));
 
 
 Route::post('/signup', 'UserController@postSignup');
 
 
-Route::get('/login',
-    array(
-        'before' => 'guest',
-        function() {
-            return View::make('login');
+Route::get('/login', array(
+    'before' => 'guest',
+    function()
+    {
+        return View::make('login');
+    }
+));
+Route::post('/login', array(
+    'before' => 'csrf',
+    function()
+    {
+        $credentials = Input::only('email', 'password');
+        if (Auth::attempt($credentials, $remember = true)) {
+            return Redirect::intended('main')->with('flash_message', 'Welcome Back!');
+        } else {
+            return Redirect::to('/login')->with('flash_message', 'Log in failed; please try again.');
         }
-    )
-);
-Route::post('/login', 
-    array(
-        'before' => 'csrf', 
-        function() {
-            $credentials = Input::only('email', 'password');
-            if (Auth::attempt($credentials, $remember = true)) {
-                return Redirect::intended('main')->with('flash_message', 'Welcome Back!');
-            }
-            else {
-                return Redirect::to('/login')->with('flash_message', 'Log in failed; please try again.');
-            }
-            return Redirect::to('login');
-        }
-    )
-);
+        return Redirect::to('login');
+    }
+));
 # /app/routes.php
-Route::get('/logout', function() {
+Route::get('/logout', function()
+{
     # Log out
     Auth::logout();
     # Send them to the homepage

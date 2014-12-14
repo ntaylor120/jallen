@@ -26,12 +26,12 @@
 
               What type of recipe is this?<br>
               {{ Form::select('type', array(
-              	'Classic Vodka'=>'Classic Vodka Recipe',
-              	'Classic Brandy'=>'Classic Brandy Recipe',
-              	'Signature Vodka'=>'Signature Vodka Recipe',
-              	'Signature Brandy'=>'Signature Brandy Recipe',
-              	'Other'=>'Other'
-              	
+                'Classic Vodka'=>'Classic Vodka Recipe',
+                'Classic Brandy'=>'Classic Brandy Recipe',
+                'Signature Vodka'=>'Signature Vodka Recipe',
+                'Signature Brandy'=>'Signature Brandy Recipe',
+                'Other'=>'Other'
+                
 
              ))}}<br><br>
 

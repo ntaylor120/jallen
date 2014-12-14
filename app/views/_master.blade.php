@@ -43,6 +43,8 @@
 
 
 	<footer>
+
+		@include('footer2')
 	 
 	 	@include('footer')
 	                  

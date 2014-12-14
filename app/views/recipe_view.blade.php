@@ -19,30 +19,29 @@
 	@endforeach
 
 </ul>
-
-
-<!--  comment on the recipe     -->
-
-
-
-<a href='/recipe_comment/{{ $recipe->id }}'>Comment</a>
-
-<!--  Edit the recipe     -->
-<a href='/recipe_view/{{ $recipe->id }}/edit'>Edit</a>
-
-<!--  Delete the recipe     -->
-
-<div>
-		
-		
+<BR><BR>
 
 
 
-	{{ Form::open(array('action' => 'RecipeController@makeRecipeDelete' )) }}
+
+<!--  RECIPE COMMENT/UPDATE/DELETE    -->
+<div class="row">
+  <div class="col-md-2"><a href='/recipe_comment/{{ $recipe->id }}'>Comment</a></div>
+  <div class="col-md-2"><a href='/recipe_view/{{ $recipe->id }}/edit'>Edit</a>
+</div>
+  <div class="col-md-4">{{ Form::open(array('action' => 'RecipeController@makeRecipeDelete' )) }}
 			{{ Form::hidden('id',$recipe['id']); }}
 			
 			{{Form::submit('Delete');}}
-		{{ Form::close() }}
+		{{ Form::close() }}</div>
+</div>
+
+		
+		
+
+
+
+	
 	</div>	  
 
 

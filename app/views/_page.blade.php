@@ -40,9 +40,16 @@
 	<footer>
 		 @if(Session::get('flash_message'))
         <div class='flash-message'>{{ Session::get('flash_message') }}</div>
-    @endif
-	 
+    	@endif
+    	<br>
+
+    	
+    		
+    	
+	 	@include('footer2')
 	 	@include('footer')
+
+
 	                  
 	</footer> 
 
