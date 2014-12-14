@@ -19,7 +19,7 @@
 <ul>
 @foreach($recipes as $recipe)
   <li> <a href='/recipe_view/{{ $recipe->id }}'>{{ $recipe->recipe_name }}</a><br></li>
-  <!--<li><a href="{{ URL::action('RecipeController@showRecipeView', $recipe->id) }}">{{{ $recipe->recipe_name }}}</a></li>-->
+ 
 @endforeach 
 </ul>
     

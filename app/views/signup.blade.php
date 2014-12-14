@@ -18,12 +18,18 @@
       <!-- /app/views/signup.blade.php -->
       <h2>Please use the form below to sign up:</h2>
 
+    @foreach($errors->all() as $message) 
+    <div class='error'>{{ $message }}</div>
+    @endforeach
+
+
+
           {{ Form::open(array('url' => '/signup')) }}
 
               Email<br>
               {{ Form::text('email') }}<br><br>
 
-              Password:<br>
+              Password (must be at least 6 characters long):<br>
               {{ Form::password('password') }}<br><br>
 
               {{ Form::submit('Submit') }}

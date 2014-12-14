@@ -180,3 +180,17 @@ body {
 .navbar-custom .navbar-link:hover {
   color: #c0c0c0;
 }
+
+
+
+
+.flash-message {
+  width:100%;
+  position:absolute;
+  top:0;
+  left:0;
+  color: #ffffff;
+  background-color:#9c6a23;
+  text-align:center;
+  padding:5px;
+}

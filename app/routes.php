@@ -80,10 +80,24 @@ Route::get('recipe_view/{id}', 'RecipeController@showRecipeView');
 Route::get('recipe_view/{id}/edit', 'RecipeController@showRecipeEdit');
 Route::post('recipe_view/{id}/edit', 'RecipeController@makeRecipeEdit');
 Route::get('recipe_updated', 'RecipeController@showRecipeEdited');
-Route::get('recipe_add', 'RecipeController@showRecipeAdd');
-Route::post('recipe_add', 'RecipeController@makeRecipe');
 Route::get('recipe_added', 'RecipeController@showRecipeAdded');
 Route::post('recipe_delete', 'RecipeController@makeRecipeDelete');
+
+
+Route::get('recipe_add', array(
+    'before'=>'auth',
+    function()
+    {return View::make('recipe_add');
+}));
+
+
+
+
+Route::post('recipe_add', 'RecipeController@makeRecipe');
+
+
+
+
 
 
 Route::get('recipe_comment', function()
@@ -114,27 +128,11 @@ Route::get('/signup',
         }
     )
 );
-Route::post('/signup', 
-    array(
-        'before' => 'csrf', 
-        function() {
-            $user = new User;
-            $user->email    = Input::get('email');
-            $user->password = Hash::make(Input::get('password'));
-            # Try to add the user 
-            try {
-                $user->save();
-            }
-            # Fail
-            catch (Exception $e) {
-                return Redirect::to('/signup')->with('flash_message', 'Sign up failed; please try again.')->withInput();
-            }
-            # Log the user in
-            Auth::login($user);
-            return Redirect::to('/main')->with('flash_message', 'Welcome to Brand X Vodka!');
-        }
-    )
-);
+
+
+Route::post('/signup', 'UserController@postSignup');
+
+
 Route::get('/login',
     array(
         'before' => 'guest',
@@ -165,6 +163,10 @@ Route::get('/logout', function() {
     # Send them to the homepage
     return Redirect::to('main')->with('flash_message', 'You have been logged out.');
 });
+
+
+
+
 Route::get('/account_edit', function()
 {
     return View::make('account_edit');

@@ -9,6 +9,16 @@
 <h1>Add A Drink Mix Recipe</h1>
 <p>&nbsp;</p>
 
+
+
+ @foreach($errors->all() as $message) 
+    <div class='error'>{{ $message }}</div>
+    @endforeach
+
+  <p>&nbsp;</p>
+
+
+
 {{ Form::open(array('url' => '/recipe_add')) }}
 
               Name of Recipe<br>

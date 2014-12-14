@@ -54,6 +54,9 @@ class RecipeController extends BaseController {
      */
    public function showRecipeAdd()
     {
+
+        /*only logged in users go to this page/create recipes */
+        $this->beforeFilter('auth');
         
         return View::make('recipe_add');
     }
@@ -61,8 +64,30 @@ class RecipeController extends BaseController {
      *  add recipe to the database   
      */
  
-    public function makeRecipe()
-    {
+    public function makeRecipe(){
+
+        # rules
+        $rules = array(
+            'before' => 'csrf',
+            'recipe_name' => 'required',
+            'description' => 'required',
+            'recipe' => 'required',
+        );
+
+        # validator
+        $validator = Validator::make(Input::all(), $rules);
+
+        # handle failures
+
+        if($validator->fails()) {
+            return Redirect::to('/recipe_add')
+                ->with('flash_message', 'The recipe was not added; please fix the errors listed below.')
+                ->withInput()
+                ->withErrors($validator);
+        }
+
+
+   
         #create new drink mix recipe using the Recipe model,  and add to recipes database
         $recipe = new Recipe();
         $recipe->recipe_name = Input::get('recipe_name');
