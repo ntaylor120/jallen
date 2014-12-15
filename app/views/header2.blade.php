@@ -34,10 +34,10 @@ template used only for the main page -->
             <div class="item active">
               
               <img src="img/page1_pic1.jpg" class="img-responsive" alt="">
-              <div class="carousel-caption2">
-                <h4>
+              <div class="carousel-caption">
+                <h3>
                   Always Fresh
-                </h4>
+                </h3>
                 <p>
                   Made with the finest ingredients
                 </p>
@@ -46,10 +46,10 @@ template used only for the main page -->
             <div class="item">
               
               <img src="img/page1_pic2.jpg" class="img-responsive" alt="">
-              <div class="carousel-caption2">
-                <h4>
+              <div class="carousel-caption">
+                <h3>
                   Always Smooth
-                </h4>
+                </h3>
                 <p>
                   For the discrimating connoisseur.
                 </p>
@@ -58,10 +58,10 @@ template used only for the main page -->
             <div class="item">
               
               <img src="img/page1_pic3.jpg" class="img-responsive" alt="Xhou Ta.">
-              <div class="carousel-caption2">
-                <h4>
+              <div class="carousel-caption">
+                <h3>
                   Always Right
-                </h4>
+                </h3>
                 <p>
                   Perfect alone or as a mixed drink
                 </p>
@@ -70,10 +70,10 @@ template used only for the main page -->
             <div class="item">
               
               <img src="img/page1_pic4.jpg" class="img-responsive" alt="">
-              <div class="carousel-caption2">
-                <h4>
+              <div class="carousel-caption">
+                <h3>
                   J Allen Imports
-                </h4>
+                </h3>
                 <p>
                   fine spirits made from all natural X
                 </p>

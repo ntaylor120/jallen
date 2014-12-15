@@ -103,11 +103,13 @@
                 Recipes
               </a>
             </li>
+            @if(Auth::check())
             <li>
               <a href="recipe_add">
                 Add a Drink Recipe
               </a>
             </li>
+            @endif
           </ul>
         </li>
         
