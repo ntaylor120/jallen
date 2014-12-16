@@ -19,7 +19,8 @@
 
 <h3>Add your comment/review here:</h3><br>
 
-{{ Form::open(array('url' => '/recipe_comment')) }}
+{{Form::open(array('action' => 'RecipeController@makeRecipeComment', $recipe->id))}}
+
 
               
 

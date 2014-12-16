@@ -195,9 +195,10 @@ class RecipeController extends BaseController
         
         
         #create new drink mix recipe using the Recipe model,  and add to recipes database
-        $review            = new Review();
-        $review->review    = Input::get('review');
+        $review            = new Review();+
         $review->recipe_id = $id;
+        $review->review    = Input::get('review');
+        
         
         
         $review->save();

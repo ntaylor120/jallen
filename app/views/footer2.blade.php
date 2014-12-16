@@ -29,8 +29,7 @@
       
       <ul class="nav navbar-nav navbar-right">
 
-       
-         
+        @if(Auth::user() && Auth::user()->is_admin)
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -42,6 +41,8 @@
           </ul>
         </li>
          
+       @endif
+
       
          <li><a href="#">&copy; 2014 J Allen Imports</a></li>
       </ul>
