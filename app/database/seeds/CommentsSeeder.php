@@ -2,19 +2,19 @@
 
 class CommentsSeeder extends Seeder {
 
-	/**
-	 * Run the database seeds.
-	 *
-	 * @return void
-	 */
-	public function run()
-	{
-		Eloquent::unguard();
+  /**
+   * Run the database seeds.
+   *
+   * @return void
+   */
+  public function run()
+  {
+    Eloquent::unguard();
 
 //call uses table seeder class
   $this->call('UsersTableSeeder');
         //this message shown in your terminal after running db:seed command
-        $this->command->info("review table seeded :)");
+        $this->command->info("Comments table seeded :)");
        }
 
 }
@@ -40,6 +40,7 @@ array('review'=>'excellent!', 'recipe_id' => '6'),
 array('review'=>'made a double batch!', 'recipe_id' => '7'),
 array('review'=>'made a triple batch', 'recipe_id' => '8'),
 array('review'=>'will make again, excellent rcipe', 'recipe_id' => '9'),
+
 
           ));
        }
