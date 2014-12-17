@@ -19,13 +19,14 @@
 
 <h3>Add your comment/review here:</h3><br>
 
-{{Form::open(array('action' => 'RecipeController@makeRecipeComment', $recipe->id))}}
+{{ Form::open(array('action' => array('RecipeController@makeRecipeComment', $recipe->id))) }}
 
 
               
 
               
               {{ Form::textarea('review') }}<br><br>
+              
 
               {{ Form::submit('Submit') }}
 

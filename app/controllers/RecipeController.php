@@ -189,20 +189,30 @@ class RecipeController extends BaseController
     
     public function makeRecipeComment($id)
     {
+         
+        try {
+            $recipe = Recipe::findOrFail($id);
+        }
+        catch (Exception $e) {
+            return Redirect::to('/recipe_view')->with('flash_message', 'Recipe not found');
+        }
+        
+        /*only logged in users go to this page/create recipes */
+        $this->beforeFilter('auth');
+      
         
         
         
         
-        
-        #create new drink mix recipe using the Recipe model,  and add to recipes database
-        $review            = new Review();+
-        $review->recipe_id = $id;
+        #create new drink mix review using the Recipe model,  and add to reviews table
+        $review            = new Review();
         $review->review    = Input::get('review');
+        $review->recipe()->associate($recipe);
         
         
         
         $review->save();
-        return View::make('recipe')->with('flash_message', 'Your comment has been saved.');
+        return View::make('main')->with('flash_message', 'Your comment has been saved.');
     }
     
 }

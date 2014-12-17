@@ -69,7 +69,7 @@ Route::get('products_vodka', 'JallenController@showProductsVodka');
 
 /*
 |--------------------------------------------------------------------------
-| Menu Section:  Mixology
+| Menu Section:  Mixology (drink recipes)
 |--------------------------------------------------------------------------
 |
 |A list of all routes/sub-menus found in the Mixology section:
