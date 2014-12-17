@@ -9,7 +9,7 @@ return array(
             'host'      => 'localhost',
             'database'  => 'jbases',
             'username'  => 'root',
-            'password'  => 'T5BC6wwiu2',
+            'password'  => 'Y8DqCJTMCd',
         ),
 
     ),
