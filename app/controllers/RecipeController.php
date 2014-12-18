@@ -212,7 +212,7 @@ class RecipeController extends BaseController
         
         
         $review->save();
-        return View::make('main')->with('flash_message', 'Your comment has been saved.');
+        return View::make('recipe')->with('flash_message', 'Your comment has been saved.');
     }
     
 }
