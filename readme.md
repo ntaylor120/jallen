@@ -52,7 +52,7 @@ Images:  all images, including the backgroun used on my site were supplied by th
 
 I used an online service for designing a navbar with the color scheme I wanted to match my existing page:  [Twitters' Bootstrap 3 Navbar Generator] (http://twitterbootstrap3navbars.w3masters.nl/)
 
-The code in this project is based heavily on the code demonstrated in Susan's lectures, and in sections.
+The code in this project is based heavily on the code demonstrated in Susan's lectures, her demo code in her github for foobooks, and in faq and class sections.
 
 I had a lot of help from many TA's via piazza - and would never have been able to get this working w/out their help.
 
