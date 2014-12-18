@@ -157,6 +157,8 @@ Events
         Log Out
       </a>
     </li>
+
+    <!-- for later:
     <li>
       <a href="account_edit">
         Edit My Account
@@ -167,6 +169,7 @@ Events
         I forgot my Password!
       </a>
     </li>
+  -->
     
   </ul>
         </li>

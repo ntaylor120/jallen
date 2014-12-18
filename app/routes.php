@@ -91,12 +91,16 @@ Route::get('recipe_other', 'RecipeController@showOther');
 Route::get('recipe_view/{id}', 'RecipeController@showRecipeView');
 Route::get('recipe_view/{id}/edit', 'RecipeController@showRecipeEdit');
 Route::post('recipe_view/{id}/edit', 'RecipeController@makeRecipeEdit');
+Route::get('recipe_edited', 'RecipeController@showRecipeEdited');
 Route::get('recipe_updated', 'RecipeController@showRecipeEdited');
 Route::get('recipe_added', 'RecipeController@showRecipeAdded');
 Route::post('recipe_delete', 'RecipeController@makeRecipeDelete');
 
+Route::get('recipe_deleted', 'RecipeController@showRecipeDeleted');
+
 Route::get('recipe_comment/{id}', 'RecipeController@showRecipeComment');
 Route::post('recipe_comment/{id}', 'RecipeController@makeRecipeComment');
+Route::get('recipe_commented', 'RecipeController@showRecipeCommented');
 
 
 Route::get('recipe_add', array(

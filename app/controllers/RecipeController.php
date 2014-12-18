@@ -144,7 +144,14 @@ class RecipeController extends BaseController
         
         $recipe->save();
         
-        return View::make('main')->with('flash_message', 'Your recipe has been saved.');
+        return View::make('recipe_edited');
+    }
+
+
+     public function showRecipeEdited()
+    {
+        
+        return View::make('recipe_edited');
     }
     
     /* 
@@ -161,9 +168,20 @@ class RecipeController extends BaseController
         }
 
            
+    
         $recipe->delete();
         /*Recipe::destroy(Input::get('id'));*/
-        return Redirect::to('/recipe')->with('flash_message', 'Recipe deleted.');
+        return View::make('/main')->with('flash_message', 'Recipe has been deleted.');
+    }
+
+
+     /* 
+     *  confirm recipe has been added 
+     */
+    public function showRecipeDeleted()
+    {
+        
+        return View::make('recipe_deleted');
     }
 
     
@@ -215,7 +233,15 @@ class RecipeController extends BaseController
         
         
         $review->save();
-        return View::make('main')->with('flash_message', 'Your comment has been saved.');
+        return View::make('recipe_commented');
     }
+
+
+    public function showRecipeCommented()
+    {
+        
+        return View::make('recipe_commented');
+    }
+
     
 }
