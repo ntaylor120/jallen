@@ -61,6 +61,7 @@ class RecipeController extends BaseController
     public function showRecipeAdd()
     {
         
+        
         /*only logged in users go to this page/create recipes */
         $this->beforeFilter('auth');
         
@@ -115,6 +116,10 @@ class RecipeController extends BaseController
      */
     public function showRecipeEdit($id)
     {
+
+        /*only logged in users can edit recipes */
+        $this->beforeFilter('auth');
+
         try {
             $recipe = Recipe::findOrFail($id);
         }
@@ -160,6 +165,9 @@ class RecipeController extends BaseController
     
     public function makeRecipeDelete()
     {
+
+        /*only logged in users can delete recipes */
+        $this->beforeFilter('auth');
         try {
             $recipe = Recipe::findOrFail(Input::get('id'));
         }
@@ -192,6 +200,11 @@ class RecipeController extends BaseController
      */
     public function showRecipeComment($id)
     {
+
+        /*only logged can review recipes */
+        $this->beforeFilter('auth');
+
+
         try {
             $recipe = Recipe::findOrFail($id);
         }

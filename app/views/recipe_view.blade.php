@@ -25,6 +25,8 @@
 
 
 <!--  RECIPE COMMENT/UPDATE/DELETE    -->
+
+@if(Auth::check())
 <div class="row">
   <div class="col-md-2"><a href='/recipe_comment/{{ $recipe->id }}'>Comment</a></div>
   <div class="col-md-2"><a href='/recipe_view/{{ $recipe->id }}/edit'>Edit</a>
@@ -35,6 +37,7 @@
 			{{Form::submit('Delete');}}
 		{{ Form::close() }}</div>
 </div>
+@endif
 
 		
 		
