@@ -17,11 +17,13 @@ This site is for a client who will be importing spirits.  It features a section 
 
 ## Demo
 
-Demo can be viewed by [CLICKING HERE]  (http://screencast.com/t/f2zJnXEeRI)
+Demo can be viewed by [CLICKING HERE]  (http://screencast.com/t/teV9knCdH7b)
+
+
 ## Details for the teaching team
 
 
-## Login
+# Login
 
 The following test loginst are avaible:
 
