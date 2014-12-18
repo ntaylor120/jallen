@@ -23,11 +23,12 @@ Demo can be viewed by [CLICKING HERE]  (http://screencast.com/t/teV9knCdH7b)
 ## Details for the teaching team
 
 
-# Login
 
-The following test loginst are avaible:
+
+The following test logins are avaible:
 
 for testing as a user:  test@test.com  password:  test123
+
 for testing as an admin:  testadmin@test.com  password: test123
 
 
