@@ -1,39 +1,6 @@
-Trying to get property of non-object
 
 
+credits:
 
-I have areas of my navbar that I want to limit to only those that are logged in - and that part works.
+I could not get my recipe to delete if it had reviews attached.  I finally found this:  http://laravel.io/forum/03-26-2014-delete-relationschild-relations-without-cascade
 
-I have one area of my navbar that I don't want users to see unless they are an admin
-
-I have a boolean in my users table called is_admin.  if it's set to 1, they are an admin.
-
-When I tried wrapping the <li> for this particular area of the navbar, I have problems:
-
-	@if( Auth::user()->is_admin)
-
-
-
-
-
-here is the full view of the navbar - I haven't fleshed out the dropdown yet, as I wanted to actually get it working first:
-
-
-       @if( Auth::user()->isadmin)
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-         
-       @endif
-
-
-
-       
-        

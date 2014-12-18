@@ -12,5 +12,25 @@ class Recipe extends Eloquent
 	}
 
 
+	# Model events...
+	# http://laravel.com/docs/eloquent#model-events
+	public static function boot() {
+        parent::boot();
+         static::deleting(function($recipe) { // called BEFORE delete()
+        foreach($recipe->reviews as $review)
+        {
+            $review->delete(); // Causes any child "deleted" events to be called
+        }
+    });
+	}
+
+
+
+
+
+    
+
+
+
 	
 }
