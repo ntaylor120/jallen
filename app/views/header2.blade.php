@@ -1,7 +1,6 @@
 
-<!--  Header2 containers the photo carousel/hero unit for the main page.
-This appears only on the _main blade template, as that is the
-template used only for the main page -->
+<!--  Header2 contains the photo carousel/hero unit for the main page.
+This appears only on the _main blade template. -->
 
 
 <div class="container">

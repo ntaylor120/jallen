@@ -12,17 +12,19 @@
 
 <body>
 	@include('header')
+
+	@if(Session::get('flash_message'))
+    <div class='flash-message'>{{ Session::get('flash_message') }}</div>
+@endif
+ 
 <div class="container-fluid">
 
  
 
 <!--Check for any flash messages, and show them if they exist -->
 
-@if(Session::get('flash_message'))
-    <div class='flash-message'>{{ Session::get('flash_message') }}</div>
-@endif
 
- 
+
  
 
 
