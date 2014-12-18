@@ -1,25 +1,65 @@
-## Laravel PHP Framework
+# Project 4
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+Nancy Taylor
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+CSCI E-15:  Dynamic Web Applications
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+## Live url
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+[http://jallen.nrtainmenttesting.me/]  (http://jallen.nrtainmenttesting.me/)
 
-## Official Documentation
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+## Description
 
-### Contributing To Laravel
+The P4 project is a website for project #4 of CSCI E-15: Dynamic Web applications.
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+This site is for a client who will be importing spirits.  It features a section where guests can view drink mix recipes.  Registered users can add/comment on and edit recipes.
 
-### License
+## Demo
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+Demo can be viewed by [CLICKING HERE]  (http://screencast.com/t/f2zJnXEeRI)
+## Details for the teaching team
+
+
+## Login
+
+The following test loginst are avaible:
+
+for testing as a user:  test@test.com  password:  test123
+for testing as an admin:  testadmin@test.com  password: test123
+
+
+
+## PLUGINS/LIBRARIES AND OUTSIDE CODE:
+
+Bootstrap:  [getbootstrap.com] (http://getbootstrap.com)
+
+Template:  [Jumbotron] (http://getbootstrap.com/examples/jumbotron/)
+
+
+Images:  all images, including the backgroun used on my site were supplied by the client who purchased them from istockphotos.com.
+
+
+
+
+
+
+
+## OTHER CREDITS
+
+I used an online service for designing a navbar with the color scheme I wanted to match my existing page:  [Twitters' Bootstrap 3 Navbar Generator] (http://twitterbootstrap3navbars.w3masters.nl/)
+
+The code in this project is based heavily on the code demonstrated in Susan's lectures, and in sections.
+
+I had a lot of help from many TA's via piazza - and would never have been able to get this working w/out their help.
+
+I could not get my recipe to delete if it had reviews attached.  I finally found this:  http://laravel.io/forum/03-26-2014-delete-relationschild-relations-without-cascade, and incorporated the informaton into my code.
+
+
+
+
+
+
+
+
+

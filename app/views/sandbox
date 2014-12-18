@@ -1,6 +1,0 @@
-
-
-credits:
-
-I could not get my recipe to delete if it had reviews attached.  I finally found this:  http://laravel.io/forum/03-26-2014-delete-relationschild-relations-without-cascade
-
